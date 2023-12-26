@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="js.js" defer></script>
+    <title>Memory Game</title>
+</head>
+
+<body>
+    <div class="timer">Time: 0s</div>
+    <!-- <div class="score">Moves: 0</div> -->
+    <div class="endGame"></div>
+    <div class="players">
+        <form>
+            <label for="numCards">Number of cards</label>
+            <input type="number" required id="numCards" placeholder="Number of cards" min="4" step="2" max="50">
+            <br>
+            <label for="numPlayers">Number of players</label>
+            <input type="number" required id="numPlayers" placeholder="Number of players" min="1" max="4">
+            <div class="startGame" onclick="startGame()">Start Game</div>
+        </form>
+    </div>
+    </div>
+    <div class="board"> <!-- נוסף class="board" כדי להתאים ל-querySelector -->
+    </div>
+
+</body>
+
+</html>
