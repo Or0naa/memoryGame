@@ -28,6 +28,7 @@ function renderScore() {
     for (let i = 0; i < playersData.length; i++) {
         let playerContainer = document.createElement("div");
         playerContainer.className = "player";
+        playerContainer.id = playersData[i].id;
         playerContainer.innerHTML = playersData[i].name + `
 score: ` + playersData[i].score;
         playersElement.appendChild(playerContainer);
