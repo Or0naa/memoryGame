@@ -35,6 +35,11 @@ score: ` + playersData[i].score;
             playerContainer.innerHTML = "עכשיו משחקת: " + playersData[i].name + `
 score: ` + playersData[i].score;
         }
+        if (playersData.length === currentPlayerIndex && i==0) {
+            playerContainer.innerHTML = "עכשיו משחקת: " + playersData[i].name + `
+score: ` + playersData[i].score;
+        }
+
         playersElement.appendChild(playerContainer);
     }
 }
