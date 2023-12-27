@@ -31,21 +31,25 @@ function renderScore() {
         playerContainer.id = playersData[i].id;
         playerContainer.innerHTML = playersData[i].name + `
 score: ` + playersData[i].score;
+        if (i === currentPlayerIndex) {
+            playerContainer.innerHTML = "עכשיו משחקת: " + playersData[i].name + `
+score: ` + playersData[i].score;
+        }
         playersElement.appendChild(playerContainer);
     }
 }
 
 function chooseColor() {
     let num6 = Math.floor(Math.random() * 1000000000000).toString();
-    num6 = num6+num6+num6+num6+num6+num6;
-    num6= num6.substring(0, 6);
+    num6 = num6 + num6 + num6 + num6 + num6 + num6;
+    num6 = num6.substring(0, 6);
     return "#" + num6;
 }
 
 
 function numCards() {
     let numberOfCards = (document.getElementById("numCards").value) / 2;
-    if (numberOfCards < 2){numberOfCards=2}
+    if (numberOfCards < 2) { numberOfCards = 2 }
     cards = [];
     for (let i = 0; i < numberOfCards; i++) {
         cards[i] = {
@@ -75,7 +79,7 @@ let startTime;
 
 function getPlayersAndStartGame() {
     let numberOfPlayers = document.getElementById("numPlayers").value;
-    if (numberOfPlayers < 1){numberOfPlayers=1}
+    if (numberOfPlayers < 1) { numberOfPlayers = 1 }
     playersData = [];
     for (let i = 0; i < numberOfPlayers; i++) {
         playersData[i] = {
@@ -137,7 +141,7 @@ function renderBoard() {
 }
 
 function flipCard(event) {
-    console.log ("תור שחקנית מספר " + (currentPlayerIndex + 1) + "!")
+    console.log("תור שחקנית מספר " + (currentPlayerIndex + 1) + "!")
 
     const cardContainer = event.parentElement;
 
@@ -150,13 +154,13 @@ function flipCard(event) {
 
         if (openedCards.length === 2) {
             movesCount++;
-            
+
             setTimeout(() => {
                 checkMatch();
                 renderBoard();
                 updateScore();
             }, 1000);
-            
+
             if (currentPlayerIndex === playersData.length) {
                 currentPlayerIndex = 0;
             }
@@ -251,4 +255,4 @@ function playAudio(filePath) {
     // יצירת אובייקט Audio
     const audio = new Audio(filePath);
     audio.play();
-  }
+}
