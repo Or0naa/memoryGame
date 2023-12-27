@@ -41,6 +41,17 @@ body {
     padding-top: 50px;
     margin-top: 50px;
 padding: 20px;
+width: 90vw;
+height: 70vh;
+overflow:auto;
+}
+
+.players{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .player {
