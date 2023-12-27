@@ -222,6 +222,7 @@ function checkMatch() {
         closeColor = secondCard.dataset.type;
         cards.forEach(v => { if (v.color === closeColor) v.isOpen = false; })
         currentPlayerIndex++
+        renderScore()
         playAudio('loozer.mp3');
     }
 
