@@ -77,7 +77,7 @@ function getPlayersAndStartGame() {
     playersData = [];
     for (let i = 0; i < numberOfPlayers; i++) {
         playersData[i] = {
-            name: prompt("What is the name of the player " + (i + 1) + "?"),
+            name: prompt("הכניסי שם לשחקנית מספר " + (i + 1) + ":"),
             score: 0,
             id: i
         };
@@ -85,7 +85,8 @@ function getPlayersAndStartGame() {
     console.log(playersData);
     numCards()
     startGame();  // כאשר סיימת להכניס את שמות השחקנים, תקרא לפונקציה startGame
-    playersElement.innerHTML = "";
+    // playersElement.innerHTML = "";
+    renderScore();
 }
 
 // כמו קודם, רק עם השינוי בקריאה לפונקציה getPlayersAndStartGame במקום לקרוא לפונקציה getPlayers
