@@ -44,7 +44,7 @@ function chooseColor() {
 
 function numCards() {
     let numberOfCards = (document.getElementById("numCards").value) / 2;
-    if (numberOfCards < 4){numberOfCards=2}
+    if (numberOfCards < 2){numberOfCards=2}
     cards = [];
     for (let i = 0; i < numberOfCards; i++) {
         cards[i] = {
@@ -88,6 +88,7 @@ function getPlayersAndStartGame() {
     startGame();  // כאשר סיימת להכניס את שמות השחקנים, תקרא לפונקציה startGame
     // playersElement.innerHTML = "";
     renderScore();
+
 }
 
 // כמו קודם, רק עם השינוי בקריאה לפונקציה getPlayersAndStartGame במקום לקרוא לפונקציה getPlayers
@@ -115,7 +116,9 @@ function startGame() {
 
 
 function renderBoard() {
+
     boardElement.innerHTML = "";
+
     for (let i = 0; i < cards.length; i++) {
         let cardContainer = document.createElement("div");
         cardContainer.className = "card";
@@ -133,6 +136,8 @@ function renderBoard() {
 }
 
 function flipCard(event) {
+    console.log ("תור שחקנית מספר " + (currentPlayerIndex + 1) + "!")
+
     const cardContainer = event.parentElement;
 
     if (openedCards.length < 2) {
@@ -150,7 +155,7 @@ function flipCard(event) {
                 renderBoard();
                 updateScore();
             }, 1000);
-            currentPlayerIndex++
+            
             if (currentPlayerIndex === playersData.length) {
                 currentPlayerIndex = 0;
             }
@@ -163,28 +168,31 @@ function flipCard(event) {
     updateScore();
 }
 
-
+הכגכהג
 
 function checkMatch() {
-    if (openedCards[0].dataset.type === openedCards[1].dataset.type) {
-        let closeColor = openedCards[0].dataset.type;
+    const firstCard = openedCards[0];
+    const secondCard = openedCards[1];
+
+    if (firstCard.dataset.type === secondCard.dataset.type) {
+        let closeColor = firstCard.dataset.type;
         cards.forEach(v => { if (v.color === closeColor) v.isOpen = true; })
         // Match found
         matchedPairs++;
-        
+
         playersData[currentPlayerIndex].score++;
+        currentPlayerIndex++
         renderScore()
+
 
         console.log("playersData" + playersData);
         console.log("currentPlayerIndex" + currentPlayerIndex);
         console.log("cards after match" + cards);
 
-
         if (matchedPairs === cards.length / 2) {
             // All pairs matched, game over
             stopTimer();
             document.querySelector(".timer").style.display = "none";
-            // alert(`Congratulations! You completed the game in ${timerValue} seconds with ${movesCount} moves.`);
             boardElement.style.display = "none";
             playersElement.style.display = "none";
             let endGame = document.querySelector(".endGame");
@@ -200,21 +208,19 @@ function checkMatch() {
             <p>The winner is ${winner}  with ${maxScore} matches.</p>
             <p>Game time was: ${timerValue} seconds.</p></div>`;
         }
-
     } else {
         // No match
-        let closeColor = openedCards[0].dataset.type;
+        let closeColor = firstCard.dataset.type;
         cards.forEach(v => { if (v.color === closeColor) v.isOpen = false; })
-        closeColor = openedCards[1].dataset.type;
+        closeColor = secondCard.dataset.type;
         cards.forEach(v => { if (v.color === closeColor) v.isOpen = false; })
-
+        currentPlayerIndex++
     }
 
     openedCards = [];
-   
-
     return;
 }
+
 
 
 
