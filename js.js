@@ -182,6 +182,7 @@ function checkMatch() {
         matchedPairs++;
 
         playersData[currentPlayerIndex].score++;
+        playAudio('miniWin.mp3')
         currentPlayerIndex++
         renderScore()
 
@@ -193,6 +194,7 @@ function checkMatch() {
         if (matchedPairs === cards.length / 2) {
             // All pairs matched, game over
             stopTimer();
+            playAudio('winner.mp3');
             document.querySelector(".timer").style.display = "none";
             boardElement.style.display = "none";
             playersElement.style.display = "none";
@@ -216,6 +218,7 @@ function checkMatch() {
         closeColor = secondCard.dataset.type;
         cards.forEach(v => { if (v.color === closeColor) v.isOpen = false; })
         currentPlayerIndex++
+        playAudio('loss.mp3');
     }
 
     openedCards = [];
@@ -244,3 +247,8 @@ function stopTimer() {
     timerElement.textContent = `Time: ${elapsedTime.toFixed(1)}s`;
 }
 
+function playAudio(filePath) {
+    // יצירת אובייקט Audio
+    const audio = new Audio(filePath);
+    audio.play();
+  }
