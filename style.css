@@ -19,7 +19,6 @@ body {
 .form{
     width: 400px;
     height: 100px;
-    background-color: #fff;
     border-radius: 5px;
     box-shadow: 20 20 20px #ecc30d;
     display: flex;
