@@ -5,7 +5,9 @@
 }
 
 body {
-    background-color: #262626;
+    background-image: url(https://pic1.calcalist.co.il/PicServer2/20122005/403696/starpicture.jpg_L.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #fff;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -44,14 +46,17 @@ padding: 20px;
 .player {
     
     -webkit-text-stroke: 1px black;
+    display: flex;
+    flex-direction: row;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
     background-image: url(woman.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 
 .card {

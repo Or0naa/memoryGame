@@ -28,7 +28,8 @@ function renderScore() {
     for (let i = 0; i < playersData.length; i++) {
         let playerContainer = document.createElement("div");
         playerContainer.className = "player";
-        playerContainer.innerHTML = playersData[i].name + " score: " + playersData[i].score;
+        playerContainer.innerHTML = playersData[i].name + `
+score: ` + playersData[i].score;
         playersElement.appendChild(playerContainer);
     }
 }
