@@ -19,7 +19,6 @@ body {
 .form{
     width: 400px;
     height: 100px;
-    background-color: #fff;
     border-radius: 5px;
     box-shadow: 20 20 20px #ecc30d;
     display: flex;
@@ -37,10 +36,9 @@ body {
     gap: 10px;
     justify-content: center;
     align-items: center;
-    padding: 50px;
-    margin: 50px;
-
-
+    padding-top: 50px;
+    margin-top: 50px;
+padding: 20px;
 }
 
 .player {
@@ -61,6 +59,7 @@ body {
     height: 5rem;
     margin: 5px;
     border: 1px solid #000;
+    box-shadow: #fff 10px 10px 10px;
     border-radius: 50%;
     background-color: #000;
     cursor: pointer;
