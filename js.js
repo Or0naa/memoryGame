@@ -62,6 +62,7 @@ let scoreElement = document.querySelector(".score");
 let boardElement = document.querySelector(".board");
 let bodyElement = document.querySelector("body");
 let playersElement = document.querySelector(".players");
+let formElement = document.querySelector(".form");
 
 let openedCards = [];
 let matchedPairs = 0;
@@ -84,6 +85,7 @@ function getPlayersAndStartGame() {
     console.log(playersData);
     numCards()
     startGame();  // כאשר סיימת להכניס את שמות השחקנים, תקרא לפונקציה startGame
+    playersElement.innerHTML = "";
 }
 
 // כמו קודם, רק עם השינוי בקריאה לפונקציה getPlayersAndStartGame במקום לקרוא לפונקציה getPlayers
@@ -98,7 +100,6 @@ function shuffle(arr) {
 
 function startGame() {
     getPlayers();
-
     document.querySelector(".startGame").style.display = "none";
     movesCount = 0;
     matchedPairs = 0;

@@ -16,14 +16,29 @@ body {
     height: 100vh;
 }
 
+.form{
+    width: 400px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 20 20 20px #ecc30d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    margin: 50px;
+    
+}
+
 .board {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    margin: 10px;
+    padding: 50px;
+    margin: 50px;
 
 
 }
@@ -33,17 +48,17 @@ body {
     -webkit-text-stroke: 1px black;
     color: white;
     font-size: 20px;
-    /* background-image: url(https://static.wixstatic.com/media/1bd14b_4683f1957288450b89506feb7c9c969c~mv2.png/v1/fill/w_249,h_237,al_c,lg_1,q_85/1bd14b_4683f1957288450b89506feb7c9c969c~mv2.png);
+    background-image: url(woman.png);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; */
+    background-position: center;
     width: 50px;
     height: 50px;
 }
 
 .card {
-    width: 150px;
-    height: 150px;
+    width: 5rem;
+    height: 5rem;
     margin: 5px;
     border: 1px solid #000;
     border-radius: 50%;
