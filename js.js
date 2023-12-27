@@ -218,7 +218,7 @@ function checkMatch() {
         closeColor = secondCard.dataset.type;
         cards.forEach(v => { if (v.color === closeColor) v.isOpen = false; })
         currentPlayerIndex++
-        playAudio('loss.mp3');
+        playAudio('loozer.mp3');
     }
 
     openedCards = [];
