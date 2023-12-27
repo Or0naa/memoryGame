@@ -43,6 +43,7 @@ function chooseColor() {
 
 function numCards() {
     let numberOfCards = (document.getElementById("numCards").value) / 2;
+    if (numberOfCards < 4){numberOfCards=2}
     cards = [];
     for (let i = 0; i < numberOfCards; i++) {
         cards[i] = {
@@ -71,6 +72,7 @@ let startTime;
 
 function getPlayersAndStartGame() {
     let numberOfPlayers = document.getElementById("numPlayers").value;
+    if (numberOfPlayers < 1){numberOfPlayers=1}
     playersData = [];
     for (let i = 0; i < numberOfPlayers; i++) {
         playersData[i] = {
